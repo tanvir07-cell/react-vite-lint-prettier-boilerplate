@@ -1,18 +1,23 @@
-import React, { useState } from "react";
 import ReactDOM from "react-dom/client";
-
+import Header from "./components/Header/Header";
+import Footer from "./components/Footer/Footer";
+import Main from "./components/Tasks/Tasks";
+import TaskController from "./context/TaskController";
 
 const App = () => {
-  
   return (
-    <div>
-      <h2>Hello World!</h2>
-    </div>
-  );
+    <>
+      <Header />
+      <TaskController>
+        <Main />
+      </TaskController>
 
+      <Footer />
+    </>
+  );
 };
 
 const container = document.getElementById("root");
 const root = ReactDOM.createRoot(container);
 
-root.render(<App/>);
+root.render(<App />);
